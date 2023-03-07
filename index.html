@@ -1,0 +1,1308 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta
+            name="description"
+            content="Documentation for the Kittn API"
+        >
+    <title>API Reference</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-9c19b03a.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-966d6edc.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-b12a2749.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-1e815a84.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="python">python</a>
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#files" class="toc-h1 toc-link" data-title="Files">Files</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#upload-a-file" class="toc-h2 toc-link" data-title="Upload a File">Upload a File</a>
+                  </li>
+                  <li>
+                    <a href="#list-file-s" class="toc-h2 toc-link" data-title="List File(s)">List File(s)</a>
+                  </li>
+                  <li>
+                    <a href="#delete-file-s" class="toc-h2 toc-link" data-title="Delete File(s)">Delete File(s)</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#collect-data" class="toc-h1 toc-link" data-title="Collect Data">Collect Data</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#estimated-inventory-quantities" class="toc-h2 toc-link" data-title="Estimated Inventory Quantities">Estimated Inventory Quantities</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#results" class="toc-h1 toc-link" data-title="Results">Results</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#check-status" class="toc-h2 toc-link" data-title="Check Status">Check Status</a>
+                  </li>
+                  <li>
+                    <a href="#download-results" class="toc-h2 toc-link" data-title="Download Results">Download Results</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#triggers" class="toc-h1 toc-link" data-title="Triggers">Triggers</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-a-trigger" class="toc-h2 toc-link" data-title="Create a Trigger">Create a Trigger</a>
+                  </li>
+                  <li>
+                    <a href="#list-triggers" class="toc-h2 toc-link" data-title="List Triggers">List Triggers</a>
+                  </li>
+                  <li>
+                    <a href="#pause-triggers" class="toc-h2 toc-link" data-title="Pause Triggers">Pause Triggers</a>
+                  </li>
+                  <li>
+                    <a href="#resume-triggers" class="toc-h2 toc-link" data-title="Resume Triggers">Resume Triggers</a>
+                  </li>
+                  <li>
+                    <a href="#delete-triggers" class="toc-h2 toc-link" data-title="Delete Triggers">Delete Triggers</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='#'>Sign Up for a Developer Key</a></li>
+            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the ListingLeopard API! You can use our API to access information about Amazon products.</p>
+
+<p>You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<h1 id='authentication'>Authentication</h1>
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'X-api-key'</span><span class="p">:</span> <span class="s">'apikey'</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.listingleopard.com'</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
+  <span class="s1">'http://api.listingleopard.com'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'X-api-key: apikey'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://api.listingleopard.com</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">'</span><span class="s1">X-api-key</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">apikey</span><span class="dl">'</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Make sure to replace <code>apikey</code> with your API key.</p>
+</blockquote>
+
+<p>ListingLeopard uses API keys to allow access to the API. You can register for ListingLeopard API key <a href="http://example.com/developers">here</a>.</p>
+
+<p>ListingLeopard expects the API key to be included in all API requests to the server. It should be passed in a header:</p>
+
+<p><code>X-api-key: apikey</code></p>
+
+<aside class="notice" style="background-color: #f5e1ff;">
+You must replace <code><b>apikey</b></code> with your personal API key.
+</aside>
+<h1 id='files'>Files</h1>
+<p>The Files endpoints allow you to upload CSV files containing ASINs to ListingLeopard. This allows you to retrieve product information for thousands of ASINs at once.</p>
+<h2 id='upload-a-file'>Upload a File</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'accept'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+    <span class="s">'X-api-key'</span><span class="p">:</span> <span class="s">'apikey'</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'description'</span><span class="p">:</span> <span class="s">'ExampleDescription'</span><span class="p">,</span>
+    <span class="s">'unique_tracking_id'</span><span class="p">:</span> <span class="s">'ExampleTrackingID'</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">files</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'file'</span><span class="p">:</span> <span class="nb">open</span><span class="p">(</span><span class="s">'200asin.csv'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">),</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'http://api.listingleopard.com/files/upload'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="n">files</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'POST'</span> <span class="se">\</span>
+  <span class="s1">'http://api.listingleopard.com/files/upload?description=ExampleDescription&amp;unique_tracking_id=ExampleTrackingID'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'X-api-key: apikey'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: multipart/form-data'</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s1">'file=@200asin.csv'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">form</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">();</span>
+<span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">'</span><span class="s1">file</span><span class="dl">'</span><span class="p">,</span> <span class="nx">File</span><span class="p">([</span><span class="dl">'</span><span class="s1">&lt;data goes here&gt;</span><span class="dl">'</span><span class="p">],</span> <span class="dl">'</span><span class="s1">200asin.csv</span><span class="dl">'</span><span class="p">));</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://api.listingleopard.com/files/upload?description=ExampleDescription&amp;unique_tracking_id=ExampleTrackingID</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">'</span><span class="s1">accept</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">X-api-key</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">apikey</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">multipart/form-data</span><span class="dl">'</span>
+    <span class="p">},</span>
+    <span class="na">body</span><span class="p">:</span> <span class="nx">form</span>
+<span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"file_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9NI5HRB53GV3JYZU"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"available"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-01T01:01:00.000000+00:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"request_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"asin_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">12500</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ExampleDescription"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"unique_tracking_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ExampleTrackingID"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint allows you to upload a file. The maximum file length is 20,000 ASINs. Retrieve a template here: http://127.0.0.1:8000/public/csv-template.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST http://api.listingleopard.com/files/upload</code></p>
+<h3 id='file-upload-parameters'>File Upload Parameters</h3>
+<p>The following parameters can be used when uploading a file:</p>
+
+<table><thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Required</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>description</code></td>
+<td><code>false</code></td>
+<td>A description of the file being uploaded. Must be a string.</td>
+</tr>
+<tr>
+<td><code>unique_tracking_id</code></td>
+<td><code>false</code></td>
+<td>A unique tracking ID for the file being uploaded. Must be a string with no more than 20 alphanumeric characters.</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+Tip - many find it useful to use unique_tracking_id as a client identifier.
+</aside>
+<h2 id='list-file-s'>List File(s)</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'accept'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+    <span class="s">'X-api-key'</span><span class="p">:</span> <span class="s">'apikey'</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'file_id'</span><span class="p">:</span> <span class="s">'9NI5HRB53GV3JYZU'</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.listingleopard.com/files/list'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
+  <span class="s1">'http://api.listingleopard.com/files/list?file_id=9NI5HRB53GV3JYZU'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'X-api-key: apikey'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://api.listingleopard.com/files/list?file_id=9NI5HRB53GV3JYZU</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">'</span><span class="s1">accept</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">X-api-key</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">apikey</span><span class="dl">'</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"file_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9NI5HRB53GV3JYZU"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"available"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-01T01:01:00.000000+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"request_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"asin_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">12500</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ExampleDescription"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"unique_tracking_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ExampleTrackingID"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"processed_requests"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves information about specific files.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET http://api.listingleopard.com/files/list</code></p>
+<h3 id='list-files-parameters'>List Files Parameters</h3>
+<p>The following parameters can be used when listing files:</p>
+
+<table><thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Required</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>file_id</code></td>
+<td><code>false</code></td>
+<td>The ID of the file for which to retrieve file information. Will return 1 file. Must be a string.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>false</code></td>
+<td>The description of the file for which to retrieve file information. May return multiple files. Must be a string.</td>
+</tr>
+<tr>
+<td><code>unique_tracking_id</code></td>
+<td><code>false</code></td>
+<td>The unique tracking ID of the file for which to retrieve file information. May return multiple files. Must be a string with no more than 20 alphanumeric characters.</td>
+</tr>
+</tbody></table>
+
+<p>If no parameters are specified, this endpoint will return information about all files associated with your account.</p>
+<h2 id='delete-file-s'>Delete File(s)</h2><div class="highlight"><pre class="highlight python tab-python"><code>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"file_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6RVBG2HV27B2JC0V"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deleted"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-01T01:01:00.000000+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-03T01:20:01.000000+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"request_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"asin_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">12500</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ExampleDescription"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"unique_tracking_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ExampleTrackingID"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"processed_requests"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint allows you to delete files.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>DELETE http://api.listingleopard.com/files/delete</code></p>
+<h3 id='delete-files-parameters'>Delete Files Parameters</h3>
+<p>The following parameters can be used when deleting files:</p>
+
+<table><thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Required</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>file_ids</code></strong></td>
+<td><strong><code>true</code></strong></td>
+<td>A list of file IDs to delete.</td>
+</tr>
+<tr>
+<td><code>override_all_triggers</code></td>
+<td><code>false</code></td>
+<td>If specified, the endpoint will delete all triggers associated with the specified file IDs. Must be a boolean. Default value is <code>false</code>.</td>
+</tr>
+</tbody></table>
+<h1 id='collect-data'>Collect Data</h1>
+<p>The following endpoints allow you to collect data from Amazon. You will use your previously uploaded files to collect data. If you have not uploaded a file, please see the <a href="#upload-a-file">Upload File</a> section. If you would like to automate the collection of data, please see the <a href="#triggers">Triggers</a> section. </p>
+<h2 id='estimated-inventory-quantities'>Estimated Inventory Quantities</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'accept'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+    <span class="s">'X-api-key'</span><span class="p">:</span> <span class="s">'apikey'</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'file_id'</span><span class="p">:</span> <span class="s">'6RVBG2HV27B2JC0V'</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.listingleopard.com/run/stock'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
+  <span class="s1">'http://api.listingleopard.com/run/stock?file_id=6RVBG2HV27B2JC0V'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'X-api-key: apikey'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://api.listingleopard.com/run/stock?file_id=6RVBG2HV27B2JC0V</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">'</span><span class="s1">accept</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">X-api-key</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">apikey</span><span class="dl">'</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns a JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"file_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9NI5HRB53GV3JYZU"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"collecting"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"started_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-01T01:01:00.000000+00:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"request_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"asin_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">12500</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f40d5680-5838-4316-baa8-a94141a9862d"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ExampleDescription"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"unique_tracking_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ExampleTrackingID"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Use the request_id returned in the response to check the status of your request, and to download results.</p>
+
+<p>Example data collected:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"asin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B074VG89H8"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amazon.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rating_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">98596</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_inventory"</span><span class="p">:</span><span class="w"> </span><span class="mi">12799</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_offers"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"time_collected"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-01T01:01:01.000000+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"offers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"seller_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tradecozone"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"seller_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A1RDYXN1JW1DJR"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"is_prime"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"rating_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">47089</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"rating_percentage"</span><span class="p">:</span><span class="w"> </span><span class="mi">89</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"condition"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">15.49</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"raw_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$15.49"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"buybox_offer"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">12784</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"seller_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MISAF"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"seller_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AC49B4JYANMWZ"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"is_prime"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"rating_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">27</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"rating_percentage"</span><span class="p">:</span><span class="w"> </span><span class="mi">37</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"condition"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.39</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"raw_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$10.39"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"buybox_offer"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"seller_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPURSGRL"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"seller_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AHMB3C82SZTI4"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"is_prime"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"rating_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">4673</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"rating_percentage"</span><span class="p">:</span><span class="w"> </span><span class="mi">84</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"condition"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">19.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"raw_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$19.00"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"buybox_offer"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"seller_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maggie Rue Co."</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"seller_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ANOURWGFI3XIL"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"is_prime"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"rating_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">27</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"rating_percentage"</span><span class="p">:</span><span class="w"> </span><span class="mi">41</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"condition"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"raw_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$20.00"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"buybox_offer"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p>This endpoint will collect estimated inventory data for your specified file. Your request will be queued into our system on a FIFO basis. All data is collected in real time. If you would like to automate the collection of data, please see the <a href="#triggers">Triggers</a> section.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET http://api.listingleopard.com/run/stock</code></p>
+<h3 id='list-files-parameters-2'>List Files Parameters</h3>
+<p>The following parameters can be used when using the &quot;stock&quot; endpoint:</p>
+
+<table><thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Required</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>file_id</code></strong></td>
+<td><strong><code>true</code></strong></td>
+<td>The ID of the file you want to collect stock data for.</td>
+</tr>
+</tbody></table>
+
+<p>You will receive a 
+<aside class="notice" style="background-color: #f5e1ff;">
+A file containing 20,000 ASINs will typically take ~5 minutes to process.
+</aside></p>
+
+<aside class="notice" style="background-color: #f5e1ff;">
+Limitations - we can return quantities >999 ~70% of the time. If a seller has a quantity limit, we can only reveal up to their limit.
+</aside>
+<h1 id='results'>Results</h1><h2 id='check-status'>Check Status</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'accept'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+    <span class="s">'X-api-key'</span><span class="p">:</span> <span class="s">'apikey'</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'request_id'</span><span class="p">:</span> <span class="s">'f40d5680-5838-4316-baa8-a94141a9862d'</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.listingleopard.com/results/status'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
+  <span class="s1">'http://api.listingleopard.com/results/status?request_id=f40d5680-5838-4316-baa8-a94141a9862d'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'X-api-key: apikey'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://api.listingleopard.com/results/status?request_id=f40d5680-5838-4316-baa8-a94141a9862d</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">'</span><span class="s1">accept</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">X-api-key</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">apikey</span><span class="dl">'</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f40d5680-5838-4316-baa8-a94141a9862d"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"file_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9NI5HRB53GV3JYZU"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"completed"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"started_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-01T01:01:00.000000+00:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-01T01:06:30.000000+00:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"asin_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">12500</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"asins_completed"</span><span class="p">:</span><span class="w"> </span><span class="mi">12500</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint checks the status of your request.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET http://api.listingleopard.com/results/status</code></p>
+<h3 id='check-status-parameters'>Check Status Parameters</h3>
+<p>The following parameter can be used when checking the status of a request:</p>
+
+<table><thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Required</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>request_id</code></strong></td>
+<td><strong><code>true</code></strong></td>
+<td>The ID of the request to check the status of.</td>
+</tr>
+</tbody></table>
+<h2 id='download-results'>Download Results</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'accept'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+    <span class="s">'X-api-key'</span><span class="p">:</span> <span class="s">'apikey'</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'request_id'</span><span class="p">:</span> <span class="s">'f40d5680-5838-4316-baa8-a94141a9862d'</span><span class="p">,</span>
+    <span class="s">'file_type'</span><span class="p">:</span> <span class="s">'csv'</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.listingleopard.com/results/download'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
+  <span class="s1">'http://api.listingleopard.com/results/download?request_id=f40d5680-5838-4316-baa8-a94141a9862d&amp;file_type=csv'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'X-api-key: apikey'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://api.listingleopard.com/results/download?request_id=f40d5680-5838-4316-baa8-a94141a9862d&amp;file_type=csv</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">'</span><span class="s1">accept</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">X-api-key</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">apikey</span><span class="dl">'</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>The above command will initiate a download of the specified file type.</p>
+</blockquote>
+
+<p>This endpoint downloads the results of your request.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET http://api.listingleopard.com/results/download</code></p>
+<h3 id='download-results-parameters'>Download Results Parameters</h3>
+<p>The following parameter can be used when checking the status of a request:</p>
+
+<table><thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Required</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>request_id</code></strong></td>
+<td><strong><code>true</code></strong></td>
+<td>The ID of the request to download the results for.</td>
+</tr>
+<tr>
+<td><strong><code>file_type</code></strong></td>
+<td><strong><code>true</code></strong></td>
+<td>The type of file you want the API to return. Must be one of: <strong><code>csv</code></strong>, <strong><code>json</code></strong>, or <strong><code>jsonl</code></strong> .</td>
+</tr>
+</tbody></table>
+<h1 id='triggers'>Triggers</h1>
+<p>Use these endpoints to automate your data collection. Prior to creating a trigger, you must create a file using the <a href="#files">files</a> endpoint. </p>
+<h2 id='create-a-trigger'>Create a Trigger</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'accept'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+    <span class="s">'X-api-key'</span><span class="p">:</span> <span class="s">'apikey'</span><span class="p">,</span>
+    <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">json_data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'file_id'</span><span class="p">:</span> <span class="s">'6RVBG2HV27B2JC0V'</span><span class="p">,</span>
+    <span class="s">'schedule_type'</span><span class="p">:</span> <span class="s">'daily'</span><span class="p">,</span>
+    <span class="s">'trigger_function'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s">'stock'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="s">'unique_tracking_id'</span><span class="p">:</span> <span class="s">'CLIENT225'</span><span class="p">,</span>
+    <span class="s">'schedule_hours'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="mi">6</span><span class="p">,</span>
+        <span class="mi">13</span><span class="p">,</span>
+        <span class="mi">16</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'http://api.listingleopard.com/triggers/create'</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">json_data</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'POST'</span> <span class="se">\</span>
+  <span class="s1">'http://api.listingleopard.com/triggers/create'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'X-api-key: apikey'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
+  "file_id": "6RVBG2HV27B2JC0V",
+  "schedule_type": "daily",
+  "trigger_function": [
+    "stock"
+  ],
+  "unique_tracking_id": "CLIENT225",
+  "schedule_hours": [
+    6,13,16
+  ]
+}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://api.listingleopard.com/triggers/create</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">'</span><span class="s1">accept</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">X-api-key</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">apikey</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span>
+    <span class="p">},</span>
+    <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+        <span class="dl">'</span><span class="s1">file_id</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">6RVBG2HV27B2JC0V</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">schedule_type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">daily</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">trigger_function</span><span class="dl">'</span><span class="p">:</span> <span class="p">[</span>
+            <span class="dl">'</span><span class="s1">stock</span><span class="dl">'</span>
+        <span class="p">],</span>
+        <span class="dl">'</span><span class="s1">unique_tracking_id</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">CLIENT225</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">schedule_hours</span><span class="dl">'</span><span class="p">:</span> <span class="p">[</span>
+            <span class="mi">6</span><span class="p">,</span>
+            <span class="mi">13</span><span class="p">,</span>
+            <span class="mi">16</span>
+        <span class="p">]</span>
+    <span class="p">})</span>
+<span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>This trigger will execute 3 times per day, because 3 different hours were specified in the schedule_hours field.</p>
+
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"triggers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"file_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6RVBG2HV27B2JC0V"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"trigger_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5634516839199759678"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"schedule_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"daily"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"enabled"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-01T01:01:01.000000+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"paused_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"resumed_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"request_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"trigger_function"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stock"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cron"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0 6,13,16 * * *"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"unique_tracking_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLIENT225"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint allows you to create a trigger.</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>POST http://api.listingleopard.com/triggers/create</code></p>
+<h3 id='trigger-parameters'>Trigger Parameters</h3>
+<p>The following parameters are used when creating a trigger:</p>
+
+<table><thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Required</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>file_id</code></strong></td>
+<td><strong><code>true</code></strong></td>
+<td>The ID of the file for which you want to create a trigger. Must be a string with no more than 30 alphanumeric characters.</td>
+</tr>
+<tr>
+<td><strong><code>schedule_type</code></strong></td>
+<td><strong><code>true</code></strong></td>
+<td>The type of schedule for the trigger. Must be one of <code>&#39;daily&#39;</code>, <code>&#39;weekly&#39;</code>, or <code>&#39;monthly&#39;</code>.</td>
+</tr>
+<tr>
+<td><strong><code>trigger_function</code></strong></td>
+<td><strong><code>true</code></strong></td>
+<td>A list of trigger functions to activate. Must contain one or both of the values <code>&#39;stock&#39;</code> and <code>&#39;reviews&#39;</code>.</td>
+</tr>
+<tr>
+<td><code>unique_tracking_id</code></td>
+<td><code>false</code></td>
+<td>A unique tracking ID for the trigger you want to create. Must be a string with no more than 20 alphanumeric characters.</td>
+</tr>
+<tr>
+<td><strong><code>schedule_hours</code></strong></td>
+<td><strong><code>true</code></strong></td>
+<td>Array of integers representing the hours at which to activate the trigger.</td>
+</tr>
+<tr>
+<td><code>schedule_days_of_week</code></td>
+<td><code>false</code></td>
+<td>Array of integers representing the days of the week on which to activate the trigger. Required if <code>schedule_type</code> is <em>weekly</em>.</td>
+</tr>
+<tr>
+<td><code>schedule_days_of_month</code></td>
+<td><code>false</code></td>
+<td>Array of integers representing the days of the month on which to activate the trigger. Required if <code>schedule_type</code> is <em>monthly</em>.</td>
+</tr>
+</tbody></table>
+<h3 id='example-schedule-parameters'>Example Schedule Parameters</h3>
+<table><thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Required</strong></th>
+<th><strong>Possible Values</strong></th>
+<th><strong>Example</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>schedule_hours</code></strong></td>
+<td><strong><code>true</code></strong></td>
+<td>Array of integers between 0 and 23.</td>
+<td><code>[6, 13, 16]</code> for 6am 1 pm, and 4pm.</td>
+</tr>
+<tr>
+<td><code>schedule_days_of_week</code></td>
+<td><code>false</code></td>
+<td>Array of integers between 0 and 6.</td>
+<td><code>[0, 3]</code> for Sunday and Wednesday.</td>
+</tr>
+<tr>
+<td><code>schedule_days_of_month</code></td>
+<td><code>false</code></td>
+<td>Array of integers between 1 and 31.</td>
+<td><code>[7, 14]</code> for the 7th and 14th of month.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice" style="background-color: #f5e1ff;">
+    The timezone of execution is UTC. You can use a converter <a href="https://www.worldtimebuddy.com/">here</a>.
+</aside>
+<h2 id='list-triggers'>List Triggers</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'accept'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+    <span class="s">'X-api-key'</span><span class="p">:</span> <span class="s">'apikey'</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'unique_tracking_id'</span><span class="p">:</span> <span class="s">'CLIENT225'</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.listingleopard.com/triggers/list'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
+  <span class="s1">'http://api.listingleopard.com/triggers/list?unique_tracking_id=CLIENT225'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'X-api-key: apikey'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://api.listingleopard.com/triggers/list?unique_tracking_id=CLIENT225</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">'</span><span class="s1">accept</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">X-api-key</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">apikey</span><span class="dl">'</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"triggers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"file_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6RVBG2HV27B2JC0V"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"trigger_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5634516839199759678"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"schedule_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"daily"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"enabled"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-01T01:01:01.000000+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"paused_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"resumed_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"request_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"trigger_function"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stock"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cron"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0 6,13,16 * * *"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"unique_tracking_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLIENT225"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a list containing triggers.</p>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>GET http://api.listingleopard.com/triggers/list</code></p>
+<h3 id='list-triggers-parameters'>List Triggers Parameters</h3>
+<p>The following parameter can be used when listing triggers:</p>
+
+<table><thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Required</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>trigger_id</code></td>
+<td><code>false</code></td>
+<td>The ID of the trigger for which to retrieve triggers. Will return 1 trigger.</td>
+</tr>
+<tr>
+<td><code>file_id</code></td>
+<td><code>false</code></td>
+<td>The ID of the file for which to retrieve triggers. Will return all triggers associated with the specified file ID.</td>
+</tr>
+<tr>
+<td><code>unique_tracking_id</code></td>
+<td><code>false</code></td>
+<td>The tracking ID of the file for which to retrieve triggers. Will return all triggers associated with the specified tracking ID.</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>false</code></td>
+<td>The status of the triggers you want to retrieve. Can be <code>enabled</code> <code>paused</code> or <code>deleted</code>.</td>
+</tr>
+</tbody></table>
+
+<p>If you don&#39;t specify any trigger parameters, the endpoint will return all triggers associated with your account.</p>
+<h2 id='pause-triggers'>Pause Triggers</h2><div class="highlight"><pre class="highlight python tab-python"><code></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"triggers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"file_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6RVBG2HV27B2JC0V"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"trigger_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5634516839199759678"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"schedule_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"daily"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paused"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-01T01:01:01.000000+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"paused_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-01T01:20:01.000000+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"resumed_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"request_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">37500</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"trigger_function"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stock"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cron"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0 6,13,16 * * *"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"unique_tracking_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLIENT225"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint pauses specific triggers.</p>
+<h3 id='http-request-9'>HTTP Request</h3>
+<p><code>GET http://api.listingleopard.com/triggers/pause</code></p>
+<h3 id='pause-triggers-parameters'>Pause Triggers Parameters</h3>
+<p>The following parameter can be used when listing triggers:</p>
+
+<table><thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Required</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>file_ids</code></td>
+<td><code>false</code></td>
+<td>A list of all file_ids. The endpoint will pause all triggers associated with all file_ids provided.</td>
+</tr>
+<tr>
+<td><code>trigger_ids</code></td>
+<td><code>false</code></td>
+<td>A list of all trigger_ids. The endpoint will pause all triggers associated with all file_ids provided.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice" style="background-color: #f5e1ff;">
+You must provide either <code>file_ids</code> or <code>trigger_ids</code>.
+</aside>
+<h2 id='resume-triggers'>Resume Triggers</h2><div class="highlight"><pre class="highlight python tab-python"><code></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"triggers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"file_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6RVBG2HV27B2JC0V"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"trigger_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5634516839199759678"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"schedule_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"daily"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-01T01:01:01.000000+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"paused_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-01T01:20:01.000000+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"resumed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-02T01:20:01.000000+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"request_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"trigger_function"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stock"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cron"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0 6,13,16 * * *"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"unique_tracking_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLIENT225"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint resumes specific triggers.</p>
+<h3 id='http-request-10'>HTTP Request</h3>
+<p><code>POST http://api.listingleopard.com/triggers/resume</code></p>
+<h3 id='resume-triggers-parameters'>Resume Triggers Parameters</h3>
+<p>The following parameter can be used when resuming triggers:</p>
+
+<table><thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Required</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>file_ids</code></td>
+<td><code>false</code></td>
+<td>A list of all file_ids. The endpoint will pause all triggers associated with all file_ids provided.</td>
+</tr>
+<tr>
+<td><code>trigger_ids</code></td>
+<td><code>false</code></td>
+<td>A list of all trigger_ids. The endpoint will pause all triggers associated with all file_ids provided.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice" style="background-color: #f5e1ff;">
+You must provide either <code>file_ids</code> or <code>trigger_ids</code>.
+</aside>
+<h2 id='delete-triggers'>Delete Triggers</h2><div class="highlight"><pre class="highlight python tab-python"><code></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"triggers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"file_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6RVBG2HV27B2JC0V"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"trigger_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5634516839199759678"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"schedule_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"daily"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deleted"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-01T01:01:01.000000+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"paused_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-01T01:20:01.000000+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"resumed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-02T01:20:01.000000+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-03T01:20:01.000000+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"request_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"trigger_function"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stock"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cron"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0 6,13,16 * * *"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"unique_tracking_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLIENT225"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint deletes specific triggers.</p>
+<h3 id='http-request-11'>HTTP Request</h3>
+<p><code>DELETE http://api.listingleopard.com/triggers/delete</code></p>
+<h3 id='delete-triggers-parameters'>Delete Triggers Parameters</h3>
+<p>The following parameter can be used when deleting triggers:</p>
+
+<table><thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Required</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>file_ids</code></td>
+<td><code>false</code></td>
+<td>A list of all file_ids. The endpoint will pause all triggers associated with all file_ids provided.</td>
+</tr>
+<tr>
+<td><code>trigger_ids</code></td>
+<td><code>false</code></td>
+<td>A list of all trigger_ids. The endpoint will pause all triggers associated with all file_ids provided.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice" style="background-color: #f5e1ff;">
+You must provide either <code>file_ids</code> or <code>trigger_ids</code>.
+</aside>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="python">python</a>
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
