@@ -562,17 +562,17 @@ Tip - many find it useful to use unique_tracking_id as a client identifier.
 <tr>
 <td><code>file_id</code></td>
 <td><code>false</code></td>
-<td>The ID of the file for which to retrieve file information. Will return 1 file. Must be a string.</td>
+<td>The ID of the file for which to retrieve file information. Will return 1 file.</td>
 </tr>
 <tr>
 <td><code>description</code></td>
 <td><code>false</code></td>
-<td>The description of the file for which to retrieve file information. May return multiple files. Must be a string.</td>
+<td>The description of the file for which to retrieve file information. May return multiple files.</td>
 </tr>
 <tr>
 <td><code>unique_tracking_id</code></td>
 <td><code>false</code></td>
-<td>The unique tracking ID of the file for which to retrieve file information. May return multiple files. Must be a string with no more than 20 alphanumeric characters.</td>
+<td>The unique tracking ID of the file for which to retrieve file information. May return multiple files.</td>
 </tr>
 </tbody></table>
 
@@ -642,7 +642,7 @@ Tip - many find it useful to use unique_tracking_id as a client identifier.
 <tr>
 <td><code>override_all_triggers</code></td>
 <td><code>false</code></td>
-<td>If specified, the endpoint will delete all triggers associated with the specified file IDs. Must be a boolean. Default value is <code>false</code>.</td>
+<td>If specified with string value <code>delete_all_triggers</code>, the endpoint will delete all triggers associated with the specified file IDs.</td>
 </tr>
 </tbody></table>
 <h1 id='collect-data'>Collect Data</h1>
