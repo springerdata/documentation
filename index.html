@@ -438,7 +438,7 @@ You must replace <code><b>apikey</b></code> with your personal API key.
 <span class="p">}</span>
 
 <span class="n">files</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">'file'</span><span class="p">:</span> <span class="nb">open</span><span class="p">(</span><span class="s">'200asin.csv'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">),</span>
+    <span class="s">'file'</span><span class="p">:</span> <span class="nb">open</span><span class="p">(</span><span class="s">'asin_template.csv'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">),</span>
 <span class="p">}</span>
 
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'http://api.listingleopard.com/files/upload'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="n">files</span><span class="p">)</span>
@@ -447,9 +447,9 @@ You must replace <code><b>apikey</b></code> with your personal API key.
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-api-key: apikey'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: multipart/form-data'</span> <span class="se">\</span>
-  <span class="nt">-F</span> <span class="s1">'file=@200asin.csv'</span>
+  <span class="nt">-F</span> <span class="s1">'file=@asin_template.csv'</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">form</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">();</span>
-<span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">'</span><span class="s1">file</span><span class="dl">'</span><span class="p">,</span> <span class="nx">File</span><span class="p">([</span><span class="dl">'</span><span class="s1">&lt;data goes here&gt;</span><span class="dl">'</span><span class="p">],</span> <span class="dl">'</span><span class="s1">200asin.csv</span><span class="dl">'</span><span class="p">));</span>
+<span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">'</span><span class="s1">file</span><span class="dl">'</span><span class="p">,</span> <span class="nx">File</span><span class="p">([</span><span class="dl">'</span><span class="s1">&lt;data goes here&gt;</span><span class="dl">'</span><span class="p">],</span> <span class="dl">'</span><span class="s1">asin_template.csv</span><span class="dl">'</span><span class="p">));</span>
 
 <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://api.listingleopard.com/files/upload?description=ExampleDescription&amp;unique_tracking_id=ExampleTrackingID</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
     <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
@@ -475,7 +475,7 @@ You must replace <code><b>apikey</b></code> with your personal API key.
   </span><span class="nl">"unique_tracking_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ExampleTrackingID"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint allows you to upload a file. The maximum file length is 20,000 ASINs. Retrieve a template here: http://127.0.0.1:8000/public/csv-template.</p>
+<p>This endpoint allows you to upload a file. The maximum file length is 20,000 ASINs. Retrieve a template [here]: (https://api.listingleopard.com/public/csv-template).</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>POST http://api.listingleopard.com/files/upload</code></p>
 <h3 id='file-upload-parameters'>File Upload Parameters</h3>
