@@ -475,7 +475,7 @@ You must replace <code><b>apikey</b></code> with your actual api key.
   </span><span class="nl">"unique_tracking_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ExampleTrackingID"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint allows you to upload a file. The maximum file length is 20,000 ASINs. Retrieve a template <a href="https://api.listingleopard.com/public/csv-template">here</a>.</p>
+<p>This endpoint allows you to upload a file. The maximum file length is 20,000 ASINs. Retrieve a template <a href="https://api.listingleopard.com/public/csv-template">here</a>. Currently support domains are : <code>amazon.com</code>.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>POST http://api.listingleopard.com/files/upload</code></p>
 <h3 id='file-upload-parameters'>File Upload Parameters</h3>
@@ -586,14 +586,15 @@ Tip - many find it useful to use unique_tracking_id as a client identifier.
 
 <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">'file_ids'</span><span class="p">:</span> <span class="s">'9NI5HRB53GV3JYZU'</span><span class="p">,</span>
+    <span class="s">'override_all_triggers'</span><span class="p">:</span> <span class="s">'delete_all_triggers'</span><span class="p">,</span>
 <span class="p">}</span>
 
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="s">'https://api.listingleopard.com/files/delete'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'DELETE'</span> <span class="se">\</span>
-  <span class="s1">'https://api.listingleopard.com/files/delete?file_ids=9NI5HRB53GV3JYZU'</span> <span class="se">\</span>
+  <span class="s1">'https://api.listingleopard.com/files/delete?file_ids=9NI5HRB53GV3JYZU&amp;override_all_triggers=delete_all_triggers'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-api-key: apikey'</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.listingleopard.com/files/delete?file_ids=9NI5HRB53GV3JYZU</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.listingleopard.com/files/delete?file_ids=9NI5HRB53GV3JYZU&amp;override_all_triggers=delete_all_triggers</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
     <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">DELETE</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="dl">'</span><span class="s1">accept</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
@@ -605,21 +606,40 @@ Tip - many find it useful to use unique_tracking_id as a client identifier.
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"file_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9NI5HRB53GV3JYZU"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deleted"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-01T01:01:00.000000+00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-03T01:20:01.000000+00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"request_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"asin_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">12500</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ExampleDescription"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"unique_tracking_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ExampleTrackingID"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"processed_requests"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"file_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9NI5HRB53GV3JYZU"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deleted"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-01T01:01:00.000000+00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-03T01:20:01.000000+00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"request_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"asin_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">12500</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ExampleDescription"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"unique_tracking_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ExampleTrackingID"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"processed_requests"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">If</span><span class="w"> </span><span class="err">override_all_triggers</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">set</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">delete_all_triggers</span><span class="p">,</span><span class="w"> 
+    </span><span class="err">//</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">receive</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">list</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">triggers</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">were</span><span class="w"> </span><span class="err">deleted.</span><span class="w">
+    </span><span class="nl">"triggers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"file_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9NI5HRB53GV3JYZU"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"trigger_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5634516839199759678"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"schedule_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"daily"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deleted"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-01T01:01:01.000000+00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"paused_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-01T01:20:01.000000+00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"resumed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-02T01:20:01.000000+00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-03T01:20:01.000000+00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"request_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"trigger_function"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stock"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cron"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0 6,13,16 * * *"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"unique_tracking_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLIENT225"</span><span class="p">,</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre></div>
 <p>This endpoint allows you to delete files.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
@@ -646,7 +666,7 @@ Tip - many find it useful to use unique_tracking_id as a client identifier.
 </tr>
 </tbody></table>
 <h1 id='collect-data'>Collect Data</h1>
-<p>The following endpoints allow you to collect data from Amazon. You will use your previously uploaded files to collect data. If you have not uploaded a file, please see the <a href="#upload-a-file">Upload File</a> section. If you would like to automate the collection of data, please see the <a href="#triggers">Triggers</a> section. </p>
+<p>The following endpoints allow you to collect data from Amazon. You will use your previously uploaded files to collect data. If you have not yet uploaded an ASIN file, please see the <a href="#upload-a-file">Upload File</a> section. If you would like to automate the collection of your data, please see the <a href="#triggers">Triggers</a> section. </p>
 <h2 id='estimated-inventory-quantities'>Estimated Inventory Quantities</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -767,7 +787,7 @@ Tip - many find it useful to use unique_tracking_id as a client identifier.
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
-<p>This endpoint will collect estimated inventory data for your specified file. Your request will be queued into our system on a FIFO basis. All data is collected in real time. If you would like to automate the collection of data, please see the <a href="#triggers">Triggers</a> section.</p>
+<p>This endpoint will collect estimated inventory data for your specified file. Your request will be queued into our system on a FIFO basis. All data is collected in real time.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
 <p><code>GET http://api.listingleopard.com/run/stock</code></p>
 <h3 id='list-files-parameters-2'>List Files Parameters</h3>
@@ -1065,7 +1085,7 @@ Limitations - we can return quantities >999 ~70% of the time. If a seller has a 
 <tr>
 <td><strong><code>file_id</code></strong></td>
 <td><strong><code>true</code></strong></td>
-<td>The ID of the file for which you want to create a trigger. Must be a string with no more than 30 alphanumeric characters.</td>
+<td>The ID of the file for which you want to create a trigger.</td>
 </tr>
 <tr>
 <td><strong><code>schedule_type</code></strong></td>
