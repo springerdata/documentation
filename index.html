@@ -678,13 +678,13 @@ Tip - many find it useful to use unique_tracking_id as a client identifier.
     <span class="s">'file_id'</span><span class="p">:</span> <span class="s">'9NI5HRB53GV3JYZU'</span><span class="p">,</span>
 <span class="p">}</span>
 
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">put</span><span class="p">(</span><span class="s">'http://api.listingleopard.com/run/stock'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'PUT'</span> <span class="se">\</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.listingleopard.com/run/stock'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
   <span class="s1">'http://api.listingleopard.com/run/stock?file_id=9NI5HRB53GV3JYZU'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-api-key: apikey'</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://api.listingleopard.com/run/stock?file_id=9NI5HRB53GV3JYZU</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
-    <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">PUT</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="dl">'</span><span class="s1">accept</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
         <span class="dl">'</span><span class="s1">X-api-key</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">apikey</span><span class="dl">'</span>
@@ -790,7 +790,7 @@ Tip - many find it useful to use unique_tracking_id as a client identifier.
 </span></code></pre></div>
 <p>This endpoint will collect estimated inventory data for your specified file. Your request will be queued into our system on a FIFO basis. All data is collected in real time.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>PUT http://api.listingleopard.com/run/stock</code></p>
+<p><code>GET http://api.listingleopard.com/run/stock</code></p>
 <h3 id='list-files-parameters-2'>List Files Parameters</h3>
 <p>The following parameters can be used when using the &quot;stock&quot; endpoint:</p>
 
