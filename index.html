@@ -993,18 +993,13 @@ Limitations - we can return quantities >999 ~70% of the time. If a seller has a 
 <span class="p">}</span>
 
 <span class="n">json_data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">'file_id'</span><span class="p">:</span> <span class="s">'9NI5HRB53GV3JYZU'</span><span class="p">,</span>
-    <span class="s">'schedule_type'</span><span class="p">:</span> <span class="s">'daily'</span><span class="p">,</span>
-    <span class="s">'trigger_function'</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s">'stock'</span><span class="p">,</span>
-    <span class="p">],</span>
-    <span class="s">'unique_tracking_id'</span><span class="p">:</span> <span class="s">'CLIENT225'</span><span class="p">,</span>
-    <span class="s">'schedule_hours'</span><span class="p">:</span> <span class="p">[</span>
-        <span class="mi">6</span><span class="p">,</span>
-        <span class="mi">13</span><span class="p">,</span>
-        <span class="mi">16</span><span class="p">,</span>
-    <span class="p">],</span>
+    <span class="s">"file_id"</span><span class="p">:</span> <span class="s">"9NI5HRB53GV3JYZU"</span><span class="p">,</span>
+    <span class="s">"schedule_type"</span><span class="p">:</span> <span class="s">"daily"</span><span class="p">,</span>
+    <span class="s">"trigger_function"</span><span class="p">:</span> <span class="p">[</span><span class="s">"stock"</span><span class="p">],</span>
+    <span class="s">"unique_tracking_id"</span><span class="p">:</span> <span class="s">"CLIENT225"</span><span class="p">,</span>
+    <span class="s">"schedule_hours"</span><span class="p">:</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">16</span><span class="p">],</span>
 <span class="p">}</span>
+
 
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'http://api.listingleopard.com/triggers/create'</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">json_data</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'POST'</span> <span class="se">\</span>
@@ -1015,13 +1010,9 @@ Limitations - we can return quantities >999 ~70% of the time. If a seller has a 
   <span class="nt">-d</span> <span class="s1">'{
   "file_id": "9NI5HRB53GV3JYZU",
   "schedule_type": "daily",
-  "trigger_function": [
-    "stock"
-  ],
+  "trigger_function": ["stock"],
   "unique_tracking_id": "CLIENT225",
-  "schedule_hours": [
-    6,13,16
-  ]
+  "schedule_hours": [6, 13, 16],
 }'</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://api.listingleopard.com/triggers/create</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
     <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
@@ -1031,18 +1022,13 @@ Limitations - we can return quantities >999 ~70% of the time. If a seller has a 
         <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span>
     <span class="p">},</span>
     <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-        <span class="dl">'</span><span class="s1">file_id</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">9NI5HRB53GV3JYZU</span><span class="dl">'</span><span class="p">,</span>
-        <span class="dl">'</span><span class="s1">schedule_type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">daily</span><span class="dl">'</span><span class="p">,</span>
-        <span class="dl">'</span><span class="s1">trigger_function</span><span class="dl">'</span><span class="p">:</span> <span class="p">[</span>
-            <span class="dl">'</span><span class="s1">stock</span><span class="dl">'</span>
-        <span class="p">],</span>
-        <span class="dl">'</span><span class="s1">unique_tracking_id</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">CLIENT225</span><span class="dl">'</span><span class="p">,</span>
-        <span class="dl">'</span><span class="s1">schedule_hours</span><span class="dl">'</span><span class="p">:</span> <span class="p">[</span>
-            <span class="mi">6</span><span class="p">,</span>
-            <span class="mi">13</span><span class="p">,</span>
-            <span class="mi">16</span>
-        <span class="p">]</span>
-    <span class="p">})</span>
+    <span class="dl">"</span><span class="s2">file_id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">9NI5HRB53GV3JYZU</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">schedule_type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">daily</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">trigger_function</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">stock</span><span class="dl">"</span><span class="p">],</span>
+    <span class="dl">"</span><span class="s2">unique_tracking_id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">CLIENT225</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">schedule_hours</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">16</span><span class="p">],</span>
+  <span class="p">}</span>
+<span class="p">)</span>
 <span class="p">});</span>
 </code></pre></div>
 <blockquote>
