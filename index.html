@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta
             name="description"
-            content="Documentation for the Kittn API"
+            content="Documentation for the ListingLeopard API"
         >
     <title>API Reference</title>
 
@@ -399,12 +399,12 @@
     <span class="s">'X-api-key'</span><span class="p">:</span> <span class="s">'apikey'</span><span class="p">,</span>
 <span class="p">}</span>
 
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.listingleopard.com'</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.listingleopard.com'</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
 curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
-  <span class="s1">'http://api.listingleopard.com'</span> <span class="se">\</span>
+  <span class="s1">'https://api.listingleopard.com'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-api-key: apikey'</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://api.listingleopard.com</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.listingleopard.com</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="dl">'</span><span class="s1">X-api-key</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">apikey</span><span class="dl">'</span>
     <span class="p">}</span>
@@ -414,7 +414,7 @@ curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\
 <p>You must replace <code>apikey</code> with your actual api key.</p>
 </blockquote>
 
-<p>ListingLeopard uses API keys to allow access to the API. You can register for an API key <a href="http://example.com/developers">here</a>.</p>
+<p>ListingLeopard uses API keys to allow access to the API. You can register for an API key <a href="https://example.com/developers">here</a>.</p>
 
 <p>ListingLeopard expects the API key to be included in all API requests to the server. It should be passed in a header:</p>
 
@@ -441,9 +441,9 @@ You must replace <code><b>apikey</b></code> with your actual api key.
     <span class="s">'file'</span><span class="p">:</span> <span class="nb">open</span><span class="p">(</span><span class="s">'asin_template.csv'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">),</span>
 <span class="p">}</span>
 
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'http://api.listingleopard.com/files/upload'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="n">files</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://api.listingleopard.com/files/upload'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="n">files</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'POST'</span> <span class="se">\</span>
-  <span class="s1">'http://api.listingleopard.com/files/upload?description=ExampleDescription&amp;unique_tracking_id=ExampleTrackingID'</span> <span class="se">\</span>
+  <span class="s1">'https://api.listingleopard.com/files/upload?description=ExampleDescription&amp;unique_tracking_id=ExampleTrackingID'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-api-key: apikey'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: multipart/form-data'</span> <span class="se">\</span>
@@ -451,7 +451,7 @@ You must replace <code><b>apikey</b></code> with your actual api key.
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">form</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">();</span>
 <span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">'</span><span class="s1">file</span><span class="dl">'</span><span class="p">,</span> <span class="nx">File</span><span class="p">([</span><span class="dl">'</span><span class="s1">&lt;data goes here&gt;</span><span class="dl">'</span><span class="p">],</span> <span class="dl">'</span><span class="s1">asin_template.csv</span><span class="dl">'</span><span class="p">));</span>
 
-<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://api.listingleopard.com/files/upload?description=ExampleDescription&amp;unique_tracking_id=ExampleTrackingID</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.listingleopard.com/files/upload?description=ExampleDescription&amp;unique_tracking_id=ExampleTrackingID</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
     <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="dl">'</span><span class="s1">accept</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
@@ -477,7 +477,7 @@ You must replace <code><b>apikey</b></code> with your actual api key.
 </span></code></pre></div>
 <p>This endpoint allows you to upload a file. The maximum file length is 20,000 ASINs. Retrieve a template <a href="https://api.listingleopard.com/public/csv-template">here</a>. Currently support domains are : <code>amazon.com</code>.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>POST http://api.listingleopard.com/files/upload</code></p>
+<p><code>POST https://api.listingleopard.com/files/upload</code></p>
 <h3 id='file-upload-parameters'>File Upload Parameters</h3>
 <p>The following parameters can be used when uploading a file:</p>
 
@@ -514,12 +514,12 @@ Tip - many find it useful to use unique_tracking_id as a client identifier.
     <span class="s">'file_id'</span><span class="p">:</span> <span class="s">'9NI5HRB53GV3JYZU'</span><span class="p">,</span>
 <span class="p">}</span>
 
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.listingleopard.com/files/list'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.listingleopard.com/files/list'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
-  <span class="s1">'http://api.listingleopard.com/files/list?file_id=9NI5HRB53GV3JYZU'</span> <span class="se">\</span>
+  <span class="s1">'https://api.listingleopard.com/files/list?file_id=9NI5HRB53GV3JYZU'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-api-key: apikey'</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://api.listingleopard.com/files/list?file_id=9NI5HRB53GV3JYZU</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.listingleopard.com/files/list?file_id=9NI5HRB53GV3JYZU</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="dl">'</span><span class="s1">accept</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
         <span class="dl">'</span><span class="s1">X-api-key</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">apikey</span><span class="dl">'</span>
@@ -548,7 +548,7 @@ Tip - many find it useful to use unique_tracking_id as a client identifier.
 </span></code></pre></div>
 <p>This endpoint retrieves information about specific files.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://api.listingleopard.com/files/list</code></p>
+<p><code>GET https://api.listingleopard.com/files/list</code></p>
 <h3 id='list-files-parameters'>List Files Parameters</h3>
 <p>The following parameters can be used when listing files:</p>
 
@@ -643,7 +643,7 @@ Tip - many find it useful to use unique_tracking_id as a client identifier.
 </span></code></pre></div>
 <p>This endpoint allows you to delete files.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://api.listingleopard.com/files/delete</code></p>
+<p><code>DELETE https://api.listingleopard.com/files/delete</code></p>
 <h3 id='delete-files-parameters'>Delete Files Parameters</h3>
 <p>The following parameters can be used when deleting files:</p>
 
@@ -678,12 +678,12 @@ Tip - many find it useful to use unique_tracking_id as a client identifier.
     <span class="s">'file_id'</span><span class="p">:</span> <span class="s">'9NI5HRB53GV3JYZU'</span><span class="p">,</span>
 <span class="p">}</span>
 
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.listingleopard.com/run/stock'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.listingleopard.com/run/stock'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
-  <span class="s1">'http://api.listingleopard.com/run/stock?file_id=9NI5HRB53GV3JYZU'</span> <span class="se">\</span>
+  <span class="s1">'https://api.listingleopard.com/run/stock?file_id=9NI5HRB53GV3JYZU'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-api-key: apikey'</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://api.listingleopard.com/run/stock?file_id=9NI5HRB53GV3JYZU</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.listingleopard.com/run/stock?file_id=9NI5HRB53GV3JYZU</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
     <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="dl">'</span><span class="s1">accept</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
@@ -790,7 +790,7 @@ Tip - many find it useful to use unique_tracking_id as a client identifier.
 </span></code></pre></div>
 <p>This endpoint will collect estimated inventory data for your specified file. Your request will be queued into our system on a FIFO basis. All data is collected in real time.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>GET http://api.listingleopard.com/run/stock</code></p>
+<p><code>GET https://api.listingleopard.com/run/stock</code></p>
 <h3 id='list-files-parameters-2'>List Files Parameters</h3>
 <p>The following parameters can be used when using the &quot;stock&quot; endpoint:</p>
 
@@ -827,12 +827,12 @@ Limitations - we can return quantities >999 ~70% of the time. If a seller has a 
     <span class="s">'request_id'</span><span class="p">:</span> <span class="s">'f40d5680-5838-4316-baa8-a94141a9862d'</span><span class="p">,</span>
 <span class="p">}</span>
 
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.listingleopard.com/requests/status'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.listingleopard.com/requests/status'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
-  <span class="s1">'http://api.listingleopard.com/requests/status?request_id=f40d5680-5838-4316-baa8-a94141a9862d'</span> <span class="se">\</span>
+  <span class="s1">'https://api.listingleopard.com/requests/status?request_id=f40d5680-5838-4316-baa8-a94141a9862d'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-api-key: apikey'</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://api.listingleopard.com/requests/status?request_id=f40d5680-5838-4316-baa8-a94141a9862d</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.listingleopard.com/requests/status?request_id=f40d5680-5838-4316-baa8-a94141a9862d</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="dl">'</span><span class="s1">accept</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
         <span class="dl">'</span><span class="s1">X-api-key</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">apikey</span><span class="dl">'</span>
@@ -855,7 +855,7 @@ Limitations - we can return quantities >999 ~70% of the time. If a seller has a 
 </span></code></pre></div>
 <p>This endpoint checks the status of your request.</p>
 <h3 id='http-request-5'>HTTP Request</h3>
-<p><code>GET http://api.listingleopard.com/requests/status</code></p>
+<p><code>GET https://api.listingleopard.com/requests/status</code></p>
 <h3 id='check-status-parameters'>Check Status Parameters</h3>
 <p>The following parameter can be used when checking the status of a request:</p>
 
@@ -879,12 +879,12 @@ Limitations - we can return quantities >999 ~70% of the time. If a seller has a 
     <span class="s">'X-api-key'</span><span class="p">:</span> <span class="s">'apikey'</span><span class="p">,</span>
 <span class="p">}</span>
 
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.listingleopard.com/requests/list'</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.listingleopard.com/requests/list'</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
-  <span class="s1">'http://api.listingleopard.com/requests/list'</span> <span class="se">\</span>
+  <span class="s1">'https://api.listingleopard.com/requests/list'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-api-key: apikey'</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://api.listingleopard.com/requests/list</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.listingleopard.com/requests/list</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="dl">'</span><span class="s1">accept</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
         <span class="dl">'</span><span class="s1">X-api-key</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">apikey</span><span class="dl">'</span>
@@ -911,7 +911,7 @@ Limitations - we can return quantities >999 ~70% of the time. If a seller has a 
 </span></code></pre></div>
 <p>This endpoint lists details about your requests.</p>
 <h3 id='http-request-6'>HTTP Request</h3>
-<p><code>GET http://api.listingleopard.com/requests/list</code></p>
+<p><code>GET https://api.listingleopard.com/requests/list</code></p>
 <h3 id='list-requests-parameters'>List Requests Parameters</h3>
 <p>The following parameters can be used when listing requests:</p>
 
@@ -942,12 +942,12 @@ Limitations - we can return quantities >999 ~70% of the time. If a seller has a 
     <span class="s">'file_type'</span><span class="p">:</span> <span class="s">'csv'</span><span class="p">,</span>
 <span class="p">}</span>
 
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.listingleopard.com/requests/download'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.listingleopard.com/requests/download'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
-  <span class="s1">'http://api.listingleopard.com/requests/download?request_id=f40d5680-5838-4316-baa8-a94141a9862d&amp;file_type=csv'</span> <span class="se">\</span>
+  <span class="s1">'https://api.listingleopard.com/requests/download?request_id=f40d5680-5838-4316-baa8-a94141a9862d&amp;file_type=csv'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-api-key: apikey'</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://api.listingleopard.com/requests/download?request_id=f40d5680-5838-4316-baa8-a94141a9862d&amp;file_type=csv</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.listingleopard.com/requests/download?request_id=f40d5680-5838-4316-baa8-a94141a9862d&amp;file_type=csv</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="dl">'</span><span class="s1">accept</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
         <span class="dl">'</span><span class="s1">X-api-key</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">apikey</span><span class="dl">'</span>
@@ -960,7 +960,7 @@ Limitations - we can return quantities >999 ~70% of the time. If a seller has a 
 
 <p>This endpoint downloads the results of your request.</p>
 <h3 id='http-request-7'>HTTP Request</h3>
-<p><code>GET http://api.listingleopard.com/requests/download</code></p>
+<p><code>GET https://api.listingleopard.com/requests/download</code></p>
 <h3 id='download-requests-parameters'>Download Requests Parameters</h3>
 <p>The following parameter can be used when checking the status of a request:</p>
 
@@ -1001,9 +1001,9 @@ Limitations - we can return quantities >999 ~70% of the time. If a seller has a 
 <span class="p">}</span>
 
 
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'http://api.listingleopard.com/triggers/create'</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">json_data</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://api.listingleopard.com/triggers/create'</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">json_data</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'POST'</span> <span class="se">\</span>
-  <span class="s1">'http://api.listingleopard.com/triggers/create'</span> <span class="se">\</span>
+  <span class="s1">'https://api.listingleopard.com/triggers/create'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-api-key: apikey'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
@@ -1014,7 +1014,7 @@ Limitations - we can return quantities >999 ~70% of the time. If a seller has a 
   "unique_tracking_id": "CLIENT225",
   "schedule_hours": [6, 13, 16],
 }'</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://api.listingleopard.com/triggers/create</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.listingleopard.com/triggers/create</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
     <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="dl">'</span><span class="s1">accept</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
@@ -1058,7 +1058,7 @@ Limitations - we can return quantities >999 ~70% of the time. If a seller has a 
 </span></code></pre></div>
 <p>This endpoint allows you to create a trigger.</p>
 <h3 id='http-request-8'>HTTP Request</h3>
-<p><code>POST http://api.listingleopard.com/triggers/create</code></p>
+<p><code>POST https://api.listingleopard.com/triggers/create</code></p>
 <h3 id='trigger-parameters'>Trigger Parameters</h3>
 <p>The following parameters are used when creating a trigger:</p>
 
@@ -1148,12 +1148,12 @@ Limitations - we can return quantities >999 ~70% of the time. If a seller has a 
     <span class="s">'unique_tracking_id'</span><span class="p">:</span> <span class="s">'CLIENT225'</span><span class="p">,</span>
 <span class="p">}</span>
 
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.listingleopard.com/triggers/list'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.listingleopard.com/triggers/list'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
-  <span class="s1">'http://api.listingleopard.com/triggers/list?unique_tracking_id=CLIENT225'</span> <span class="se">\</span>
+  <span class="s1">'https://api.listingleopard.com/triggers/list?unique_tracking_id=CLIENT225'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-api-key: apikey'</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://api.listingleopard.com/triggers/list?unique_tracking_id=CLIENT225</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.listingleopard.com/triggers/list?unique_tracking_id=CLIENT225</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
     <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="dl">'</span><span class="s1">accept</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
@@ -1186,7 +1186,7 @@ Limitations - we can return quantities >999 ~70% of the time. If a seller has a 
 </span></code></pre></div>
 <p>This endpoint retrieves a list containing triggers.</p>
 <h3 id='http-request-9'>HTTP Request</h3>
-<p><code>GET http://api.listingleopard.com/triggers/list</code></p>
+<p><code>GET https://api.listingleopard.com/triggers/list</code></p>
 <h3 id='list-triggers-parameters'>List Triggers Parameters</h3>
 <p>The following parameter can be used when listing triggers:</p>
 
@@ -1248,7 +1248,7 @@ Limitations - we can return quantities >999 ~70% of the time. If a seller has a 
 </span></code></pre></div>
 <p>This endpoint pauses specific triggers.</p>
 <h3 id='http-request-10'>HTTP Request</h3>
-<p><code>PUT http://api.listingleopard.com/triggers/pause</code></p>
+<p><code>PUT https://api.listingleopard.com/triggers/pause</code></p>
 <h3 id='pause-triggers-parameters'>Pause Triggers Parameters</h3>
 <p>The following parameter can be used when listing triggers:</p>
 
@@ -1302,7 +1302,7 @@ You must provide either <code>file_ids</code> or <code>trigger_ids</code>.
 </span></code></pre></div>
 <p>This endpoint resumes specific triggers.</p>
 <h3 id='http-request-11'>HTTP Request</h3>
-<p><code>PUT http://api.listingleopard.com/triggers/resume</code></p>
+<p><code>PUT https://api.listingleopard.com/triggers/resume</code></p>
 <h3 id='resume-triggers-parameters'>Resume Triggers Parameters</h3>
 <p>The following parameter can be used when resuming triggers:</p>
 
@@ -1356,7 +1356,7 @@ You must provide either <code>file_ids</code> or <code>trigger_ids</code>.
 </span></code></pre></div>
 <p>This endpoint deletes specific triggers.</p>
 <h3 id='http-request-12'>HTTP Request</h3>
-<p><code>DELETE http://api.listingleopard.com/triggers/delete</code></p>
+<p><code>DELETE https://api.listingleopard.com/triggers/delete</code></p>
 <h3 id='delete-triggers-parameters'>Delete Triggers Parameters</h3>
 <p>The following parameter can be used when deleting triggers:</p>
 
