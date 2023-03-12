@@ -955,10 +955,15 @@ Limitations - we can return quantities >999 ~70% of the time. If a seller has a 
 <span class="p">});</span>
 </code></pre></div>
 <blockquote>
-<p>The above command will initiate a download of the specified file type.</p>
+<p>The above command will return a pre-signed URL of the file you want to download:</p>
 </blockquote>
-
-<p>This endpoint downloads the results of your request.</p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"presignedUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example-download-url.com/results/csv/f40d5680-5838-4316-baa8-a94141a9862d&amp;"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint allows you to download the results of your request. Make a GET request to the signed URL to download the file.</p>
 <h3 id='http-request-7'>HTTP Request</h3>
 <p><code>GET https://api.listingleopard.com/requests/download</code></p>
 <h3 id='download-requests-parameters'>Download Requests Parameters</h3>
