@@ -574,6 +574,16 @@ Tip - many find it useful to use unique_tracking_id as a client identifier.
 <td><code>false</code></td>
 <td>The unique tracking ID of the file for which to retrieve file information. May return multiple files.</td>
 </tr>
+<tr>
+<td><code>page</code></td>
+<td><code>false</code></td>
+<td>Page number. Defaults to 1 if no value is provided. Results are sorted by created_at descending (newest first).</td>
+</tr>
+<tr>
+<td><code>page_size</code></td>
+<td><code>false</code></td>
+<td>Page size. Defaults to 10 if no value is provided.</td>
+</tr>
 </tbody></table>
 
 <p>If no parameters are specified, this endpoint will return information about all files associated with your account.</p>
